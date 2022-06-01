@@ -33,7 +33,7 @@
     "typescript": "4.7.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "src/**/*.{js,jsx,ts,tsx,json}": [
       "yarn eslint",
       "prettier --write"
     ]

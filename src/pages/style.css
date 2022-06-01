@@ -1,0 +1,34 @@
+:root {
+  --primary: #fdc921;
+  --primary200: #fdd85d;
+  --background-gray: #eeeee4;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.layout-container {
+  display: grid;
+  grid-template-areas:
+    'side head'
+    'side children';
+  grid-template-rows: 1fr 9fr;
+  grid-template-columns: 1fr 9fr;
+  /* background-color: red; */
+  min-height: 100vh;
+}
+.header {
+  grid-area: head;
+  /* background-color: brown; */
+}
+.children {
+  grid-area: children;
+  /* background-color: rgb(89, 18, 18); */
+}
+.side {
+  grid-area: side;
+  background-color: var(--primary);
+}
+
+/*  */

@@ -1,8 +1,16 @@
-import '../styles/globals.css';
-import type { AppProps } from 'next/app';
+// export default App;
+import { FC } from 'react';
+import { PageComponent } from '@/common/types/page';
+import { Layout } from '@/common/components/Layout';
+import './style.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+export const App: FC<{
+  Component: PageComponent;
+  pageProps: any;
+}> = ({ Component, pageProps }) => {
+  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
 
-export default MyApp;
+  return <div>{getLayout(<Component {...pageProps} />)}</div>;
+};
+
+export default App;
