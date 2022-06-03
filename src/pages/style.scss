@@ -15,16 +15,13 @@ body {
     'side children';
   grid-template-rows: 1fr 9fr;
   grid-template-columns: 1fr 9fr;
-  /* background-color: red; */
   min-height: 100vh;
 }
 .header {
   grid-area: head;
-  /* background-color: brown; */
 }
 .children {
   grid-area: children;
-  /* background-color: rgb(89, 18, 18); */
 }
 .side {
   grid-area: side;
@@ -32,3 +29,26 @@ body {
 }
 
 /*  */
+
+.side-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-title {
+  margin-bottom: 32px;
+}
+
+.side-item {
+  display: flex;
+  cursor: pointer;
+  font-size: large;
+  &:hover {
+    background-color: var(--primary200);
+  }
+  width: 100%;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

@@ -2,7 +2,7 @@
 import { FC } from 'react';
 import { PageComponent } from '@/common/types/page';
 import { Layout } from '@/common/components/Layout';
-import './style.css';
+import './style.scss';
 
 export const App: FC<{
   Component: PageComponent;
