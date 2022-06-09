@@ -11,7 +11,6 @@ export const Layout: FC<any> = ({ children }) => {
       <div className="side">
         <Side />
       </div>
-
       <div className="children">{children}</div>
     </div>
   );
