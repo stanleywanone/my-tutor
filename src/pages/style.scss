@@ -74,3 +74,15 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 }
+
+.math-map-box.input {
+  width: 98px;
+  background-color: white;
+  text-align: center;
+}
+
+.math-map-box.button-submit {
+  display: flex;
+  background-color: #5d82fd;
+  color: white;
+}
