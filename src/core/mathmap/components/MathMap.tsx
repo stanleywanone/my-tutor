@@ -4,7 +4,7 @@ import { MathMapBox } from '@/common/components/MathMapBox';
 import { useMathMap } from '@/core/mathmap/hooks/useMathMap';
 
 export const MathMap = memo<any>(() => {
-  const { mathMapNumbers, missingNumbers } = useMathMap();
+  const { mathMapNumbers, missingNumbers, errorNumbers, setErrorNumbers } = useMathMap();
   const [submit, setSubmit] = useState(false);
 
   return (
@@ -18,6 +18,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -32,6 +34,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -46,6 +50,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -60,6 +66,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -74,6 +82,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -88,6 +98,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -102,6 +114,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -116,6 +130,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -130,6 +146,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -144,6 +162,8 @@ export const MathMap = memo<any>(() => {
                 arrow={i === 9 ? false : true}
                 missingNumbers={missingNumbers}
                 submit={submit}
+                errorNumbers={errorNumbers}
+                setErrorNumbers={setErrorNumbers}
               />
             </div>
           );
@@ -158,6 +178,7 @@ export const MathMap = memo<any>(() => {
         <button className="math-map-box button-submit" onClick={() => setSubmit(true)}>
           Submit
         </button>
+        {submit && errorNumbers > 0 && <div>There are {errorNumbers} errors</div>}
       </div>
     </>
   );
