@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 
@@ -9,17 +9,22 @@ export const Side: FC<any> = () => {
     { value: '/introduction', label: 'Introduction' },
     { value: '/firstgrade', label: '1st Grade', level: 'parent' },
     { value: '/firstgrade/mathmap', label: 'Math Map', level: 'child', parent: '/firstgrade' },
+    { value: '/firstgrade/addition', label: 'Addition', level: 'child', parent: '/firstgrade' },
   ];
 
-  const levelCondition = (item: any): void => {
-    if (item.level === 'parent') {
-      if (openMenu === '') setOpenMenu(item.value);
-      if (openMenu === item.value) setOpenMenu('');
-    } else {
-      if (openMenu !== item.parent) setOpenMenu('');
-      router.push(item.value);
-    }
-  };
+  const levelCondition = useCallback(
+    (item: any) => {
+      if (item.level === 'parent') {
+        if (openMenu === '') setOpenMenu(item.value);
+        if (openMenu === item.value) setOpenMenu('');
+      } else {
+        if (openMenu !== item.parent) setOpenMenu('');
+        console.log('openm, ', openMenu);
+        router.push(item.value);
+      }
+    },
+    [openMenu, router]
+  );
 
   return (
     <div className="side-container">
