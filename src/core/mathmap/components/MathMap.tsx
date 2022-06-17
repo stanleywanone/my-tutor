@@ -8,7 +8,7 @@ export const MathMap = memo<any>(() => {
   const [submit, setSubmit] = useState(false);
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex', marginTop: '15px' }}>
         {mathMapNumbers.slice(1, 11).map((num, i) => {
           return (
@@ -173,14 +173,20 @@ export const MathMap = memo<any>(() => {
         style={{
           display: 'flex',
           marginTop: '15px',
+          alignItems: 'center',
         }}
       >
         <button className="math-map-box button-submit" onClick={() => setSubmit(true)}>
           Submit
         </button>
-        {submit && errorNumbers > 0 && <div>There are {errorNumbers} errors</div>}
+        {submit && errorNumbers > 0 && (
+          <div style={{ marginLeft: '20px', color: 'red' }}>There are {errorNumbers} errors</div>
+        )}
+        {submit && errorNumbers === 0 && (
+          <div style={{ marginLeft: '20px', color: 'green' }}>Excellent!</div>
+        )}
       </div>
-    </>
+    </div>
   );
 });
 

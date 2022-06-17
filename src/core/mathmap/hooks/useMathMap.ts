@@ -8,7 +8,7 @@ export interface useMathMapReturn {
 }
 
 export const useMathMap = (): useMathMapReturn => {
-  const [errorNumbers, setErrorNumbers] = useState(25);
+  const [errorNumbers, setErrorNumbers] = useState(10);
   const mathMapNumbers = useMemo(() => {
     return Array.from({ length: 101 }).map((_, i) => {
       return i.toString();
@@ -16,7 +16,7 @@ export const useMathMap = (): useMathMapReturn => {
   }, []);
 
   const missingNumbers = useMemo(() => {
-    return Array.from({ length: 25 }).map((_) => {
+    return Array.from({ length: 10 }).map((_) => {
       return Math.floor(Math.random() * 100).toString();
     });
   }, []);
