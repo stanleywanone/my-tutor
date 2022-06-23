@@ -10,6 +10,12 @@ export const Side: FC<any> = () => {
     { value: '/firstgrade', label: '1st Grade', level: 'parent' },
     { value: '/firstgrade/mathmap', label: 'Math Map', level: 'child', parent: '/firstgrade' },
     { value: '/firstgrade/addition', label: 'Addition', level: 'child', parent: '/firstgrade' },
+    {
+      value: '/firstgrade/comparenumbers',
+      label: 'Compare Numbers',
+      level: 'child',
+      parent: '/firstgrade',
+    },
   ];
 
   const levelCondition = useCallback(

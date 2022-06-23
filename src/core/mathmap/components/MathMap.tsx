@@ -176,9 +176,11 @@ export const MathMap = memo<any>(() => {
           alignItems: 'center',
         }}
       >
-        <button className="math-map-box button-submit" onClick={() => setSubmit(true)}>
-          Submit
-        </button>
+        {errorNumbers > 0 && (
+          <button className="math-map-box button-submit" onClick={() => setSubmit(true)}>
+            Submit
+          </button>
+        )}
         {submit && errorNumbers > 0 && (
           <div style={{ marginLeft: '20px', color: 'red' }}>There are {errorNumbers} errors</div>
         )}
